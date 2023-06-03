@@ -7,6 +7,10 @@ import image3 from "./img/3.jpg";
 import image4 from "./img/4.jpg";
 import image5 from "./img/5.jpg";
 import image6 from "./img/6.jpg";
+import image7 from "./img/7.jpg";
+import image8 from "./img/8.jpg";
+import image9 from "./img/9.jpg";
+import image10 from "./img/9.jpg";
 import imageBack from "./img/back.jpg";
 
 const cardImages = [
@@ -16,6 +20,10 @@ const cardImages = [
   { src: image4, matched: false },
   { src: image5, matched: false },
   { src: image6, matched: false },
+  { src: image7, matched: false },
+  { src: image8, matched: false },
+  { src: image9, matched: false },
+  { src: image10, matched: false },
 ];
 
 const App = () => {
@@ -76,20 +84,29 @@ const App = () => {
     <div className="app">
       <h1>Magic Match</h1>
       <button onClick={shuffleCards}>New Game</button>
-
-      <div className="card-grid">
-        {cards.map((card) => {
-          return (
-            <SingleCard
-              key={card.id}
-              card={card}
-              imageBack={imageBack}
-              handleChoice={handleChoice}
-              flipped={card === choiceOne || card === choiceTwo || card.matched}
-              disabled={disabled}
-            />
-          );
-        })}
+      <div className="middle-grid">
+        <div className="card-grid">
+          {cards.map((card) => {
+            return (
+              <SingleCard
+                key={card.id}
+                card={card}
+                imageBack={imageBack}
+                handleChoice={handleChoice}
+                flipped={
+                  card === choiceOne || card === choiceTwo || card.matched
+                }
+                disabled={disabled}
+              />
+            );
+          })}
+        </div>
+        <div className="score">
+          <p>TOP score:</p>
+          <p>1: Mamka - 15 turns</p>
+          <p>2: Rosťa - 17 turns</p>
+          <p>3: Tóňa - 20 turns</p>
+        </div>
       </div>
       <p>Turns: {turns}</p>
     </div>
