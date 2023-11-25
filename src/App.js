@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import SingleCard from "./components/SingleCard";
 
 import image1 from "./img/1.jpg";
@@ -29,24 +30,35 @@ const cardImages = [
 const App = () => {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
-  const [choiceOne, setChoiceOne] = useState(null);
-  const [choiceTwo, setChoiceTwo] = useState(null);
+  const [choiceOne, setChoiceOne] = useState("");
+  const [choiceTwo, setChoiceTwo] = useState("");
   const [disabled, setDisabled] = useState(false);
 
-  const shuffleCards = () => {
+  function shuffleCards() {
     const shuffleCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }));
+      .map((card, i) => ({ ...card, id: i }));
 
-    setChoiceOne(null);
-    setChoiceTwo(null);
+    setChoiceOne("");
+    setChoiceTwo("");
     setCards(shuffleCards);
     setTurns(0);
-  };
+  }
 
-  const handleChoice = (card) => {
+  function handleChoice(card) {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
-  };
+  }
+
+  function resetTurn() {
+    setChoiceOne("");
+    setChoiceTwo("");
+    setTurns((prevTurns) => prevTurns + 1);
+    setDisabled(false);
+  }
+
+  useEffect(() => {
+    shuffleCards();
+  }, []);
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
@@ -69,17 +81,6 @@ const App = () => {
     }
   }, [choiceOne, choiceTwo]);
 
-  const resetTurn = () => {
-    setChoiceOne(null);
-    setChoiceTwo(null);
-    setTurns((prevTurns) => prevTurns + 1);
-    setDisabled(false);
-  };
-
-  useEffect(() => {
-    shuffleCards();
-  }, []);
-
   return (
     <div className="app">
       <h1>Magic Match</h1>
@@ -92,7 +93,7 @@ const App = () => {
               key={card.id}
               card={card}
               imageBack={imageBack}
-              handleChoice={handleChoice}
+              onChoice={handleChoice}
               flipped={card === choiceOne || card === choiceTwo || card.matched}
               disabled={disabled}
             />
