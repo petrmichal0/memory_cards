@@ -114,8 +114,5 @@ memory_cards/
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-<div style="text-align: right;">
-  <a href="#top">Back to Top</a>
-</div>
 
 
