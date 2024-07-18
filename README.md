@@ -24,9 +24,6 @@ Memory Cards is an application for practicing memory using memory cards.
 - [Third-Party Libraries](#third-party-libraries)
 - [License](#License)
 
-## Introduction
-Memory Cards is a simple application that allows users to practice their memory through a game of memory cards.
-
 ## Features
 - Customizable card packs
 - Score tracking
