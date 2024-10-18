@@ -1,4 +1,3 @@
-<a name="top"></a>
 # Memory Cards
 
 ## Project Title and Description
@@ -8,12 +7,10 @@ Memory Cards is an application for practicing memory using memory cards.
 ![Static Badge](https://img.shields.io/badge/status-online-brightgreen)
 
 ## Quick Look
-<img src="https://github.com/user-attachments/assets/ab87aa89-3baf-42ff-9cf4-a6b36fad3948" width="700"  alt="Screen Recording - Jul 17, 2024 (2)">
-
-
+<img src="https://github.com/user-attachments/assets/ab87aa89-3baf-42ff-9cf4-a6b36fad3948" width="700"  alt="Memory Cards">
 
 ## Table of Content
-- [Introduction](#introduction)
+- [Project Title and Description](#project-title-and-description)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -105,11 +102,11 @@ memory_cards/
 
 ## Third-Party Libraries
 
-* React Router
+* None
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the LICENSE file for details.
 
 
 
